@@ -5,11 +5,11 @@ const monthNames = ["January", "February", "March", "April", "May", "June",
 //yestardy's date as default
 let d = new Date();
 let yestarday;
-if(d.getDate()-1 < 10 && d.getMonth()+1<10)
+if(d.getDate()-1 < 10 && d.getMonth()+1 < 10)
   yestarday = String(`0${d.getDate()-1}/0${d.getMonth()+1}/2020`);
-else if(d.getDate()-1 < 10 && d.getMonth()+1>=10)
+else if(d.getDate()-1 < 10 && d.getMonth()+1 >= 10)
   yestarday = String(`0${d.getDate()-1}/${d.getMonth()+1}/2020`);
-else if(d.getDate()-1 > 10 && d.getMonth()+1<10)
+else if(d.getDate()-1 >= 10 && d.getMonth()+1 < 10)
   yestarday = String(`${d.getDate()-1}/0${d.getMonth()+1}/2020`);
 else
   yestarday = String(`${d.getDate()-1}/${d.getMonth()+1}/2020`);
@@ -59,8 +59,8 @@ function getData(dateData){
                   document.querySelector('.four').innerHTML = `<p><h1 style="text-align: center; font-family:'Comic Sans MS'; color: white; font-size:80px"> ${element.dailydeceased} </h1><p>`;
               }
           });
-          data.tested.forEach(element => {
-            if(element.testedasof == dateData){
+          data.tested.forEach(element => { console.log(dateData);
+            if(element.testedasof == dateData){ 
                 console.log(element.testspermillion);
                 document.querySelector('.three').innerHTML = `<p><h1 style="text-align: center; font-family:'Comic Sans MS'; color: white; font-size:80px">${element.testspermillion} </h1><p>`;
             }
